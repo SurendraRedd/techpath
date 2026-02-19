@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechPath - Your Guide to Modern Technology</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><i class="fas fa-road"></i> TechPath</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="#technologies">Technologies</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#labs">Labs</a></li>
+            </ul>
+            <div class="nav-toggle" onclick="toggleNav()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Learn Modern Technology</h1>
+                <p>Simple guides to cloud computing, containers, and automation tools</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">8+</span>
+                        <span class="stat-label">Technologies</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Resources</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Hands-on Labs</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#roadmap" class="btn btn-primary">Start Learning Path</a>
+                    <a href="#technologies" class="btn btn-secondary">Explore Technologies</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Roadmap Section -->
+        <section id="roadmap" class="roadmap-section">
+            <h2><i class="fas fa-route"></i> Learning Roadmap</h2>
+            <p class="section-desc">A simple path to learn step by step</p>
+            
+            <div class="roadmap-container">
+                <div class="roadmap-phase">
+                    <div class="phase-header phase-1">
+                        <span class="phase-number">1</span>
+                        <h3>Foundation</h3>
+                        <span class="phase-duration">2-4 weeks</span>
+                    </div>
+                    <div class="phase-content">
+                        <div class="phase-item"><i class="fab fa-linux"></i><span>Linux Fundamentals</span></div>
+                        <div class="phase-item"><i class="fas fa-network-wired"></i><span>Networking Basics</span></div>
+                        <div class="phase-item"><i class="fab fa-git-alt"></i><span>Git & Version Control</span></div>
+                        <div class="phase-item"><i class="fab fa-python"></i><span>Scripting (Bash/Python)</span></div>
+                    </div>
+                </div>
+
+                <div class="roadmap-connector"></div>
+
+                <div class="roadmap-phase">
+                    <div class="phase-header phase-2">
+                        <span class="phase-number">2</span>
+                        <h3>Containerization</h3>
+                        <span class="phase-duration">3-4 weeks</span>
+                    </div>
+                    <div class="phase-content">
+                        <div class="phase-item clickable" onclick="openModal('docker')"><i class="fab fa-docker"></i><span>Docker Fundamentals</span></div>
+                        <div class="phase-item"><i class="fas fa-layer-group"></i><span>Docker Compose</span></div>
+                        <div class="phase-item"><i class="fas fa-box"></i><span>Container Registries</span></div>
+                        <div class="phase-item"><i class="fas fa-shield-alt"></i><span>Container Security</span></div>
+                    </div>
+                </div>
+
+                <div class="roadmap-connector"></div>
+
+                <div class="roadmap-phase">
+                    <div class="phase-header phase-3">
+                        <span class="phase-number">3</span>
+                        <h3>Orchestration</h3>
+                        <span class="phase-duration">4-6 weeks</span>
+                    </div>
+                    <div class="phase-content">
+                        <div class="phase-item clickable" onclick="openModal('kubernetes')"><i class="fas fa-dharmachakra"></i><span>Kubernetes Core</span></div>
+                        <div class="phase-item clickable" onclick="openModal('helm')"><i class="fas fa-ship"></i><span>Helm Charts</span></div>
+                        <div class="phase-item"><i class="fas fa-project-diagram"></i><span>Service Mesh (Istio)</span></div>
+                        <div class="phase-item"><i class="fas fa-tachometer-alt"></i><span>Monitoring (Prometheus)</span></div>
+                    </div>
+                </div>
+
+                <div class="roadmap-connector"></div>
+
+                <div class="roadmap-phase">
+                    <div class="phase-header phase-4">
+                        <span class="phase-number">4</span>
+                        <h3>Cloud Platforms</h3>
+                        <span class="phase-duration">6-8 weeks</span>
+                    </div>
+                    <div class="phase-content">
+                        <div class="phase-item clickable" onclick="openModal('aws')"><i class="fab fa-aws"></i><span>AWS Services</span></div>
+                        <div class="phase-item clickable" onclick="openModal('azure')"><i class="fab fa-microsoft"></i><span>Azure Services</span></div>
+                        <div class="phase-item clickable" onclick="openModal('gcp')"><i class="fab fa-google"></i><span>GCP Services</span></div>
+                        <div class="phase-item"><i class="fas fa-certificate"></i><span>Cloud Certifications</span></div>
+                    </div>
+                </div>
+
+                <div class="roadmap-connector"></div>
+
+                <div class="roadmap-phase">
+                    <div class="phase-header phase-5">
+                        <span class="phase-number">5</span>
+                        <h3>Infrastructure as Code</h3>
+                        <span class="phase-duration">4-6 weeks</span>
+                    </div>
+                    <div class="phase-content">
+                        <div class="phase-item clickable" onclick="openModal('terraform')"><i class="fas fa-cube"></i><span>Terraform</span></div>
+                        <div class="phase-item clickable" onclick="openModal('pulumi')"><i class="fas fa-rocket"></i><span>Pulumi</span></div>
+                        <div class="phase-item"><i class="fas fa-cogs"></i><span>Ansible</span></div>
+                        <div class="phase-item"><i class="fas fa-code-branch"></i><span>GitOps (ArgoCD)</span></div>
+                    </div>
+                </div>
+
+                <div class="roadmap-connector"></div>
+
+                <div class="roadmap-phase">
+                    <div class="phase-header phase-6">
+                        <span class="phase-number">6</span>
+                        <h3>CI/CD & Automation</h3>
+                        <span class="phase-duration">3-4 weeks</span>
+                    </div>
+                    <div class="phase-content">
+                        <div class="phase-item"><i class="fab fa-github"></i><span>GitHub Actions</span></div>
+                        <div class="phase-item"><i class="fab fa-jenkins"></i><span>Jenkins</span></div>
+                        <div class="phase-item"><i class="fab fa-gitlab"></i><span>GitLab CI/CD</span></div>
+                        <div class="phase-item"><i class="fas fa-check-circle"></i><span>Testing & Quality</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technologies Section -->
+        <section id="technologies" class="technologies">
+            <h2><i class="fas fa-laptop-code"></i> Technologies</h2>
+            <p class="section-desc">Click any card to learn more about it</p>
+            
+            <h3 class="section-subtitle"><i class="fas fa-cloud"></i> Cloud Platforms</h3>
+            <div class="tech-grid">
+                <div class="tech-card aws-card" onclick="openModal('aws')">
+                    <div class="tech-badge">Most Popular</div>
+                    <div class="tech-icon"><i class="fab fa-aws"></i></div>
+                    <h3>Amazon Web Services</h3>
+                    <p>Rent computers & storage online - pay only for what you use</p>
+                    <div class="tech-tags"><span class="tag">EC2</span><span class="tag">S3</span><span class="tag">Lambda</span><span class="tag">+200</span></div>
+                </div>
+                <div class="tech-card azure-card" onclick="openModal('azure')">
+                    <div class="tech-badge">Enterprise</div>
+                    <div class="tech-icon"><i class="fab fa-microsoft"></i></div>
+                    <h3>Microsoft Azure</h3>
+                    <p>Microsoft's cloud - works great with Windows & Office</p>
+                    <div class="tech-tags"><span class="tag">VMs</span><span class="tag">AKS</span><span class="tag">DevOps</span><span class="tag">+100</span></div>
+                </div>
+                <div class="tech-card gcp-card" onclick="openModal('gcp')">
+                    <div class="tech-badge">AI/ML Leader</div>
+                    <div class="tech-icon"><i class="fab fa-google"></i></div>
+                    <h3>Google Cloud Platform</h3>
+                    <p>Google's cloud - same tech that powers Search & YouTube</p>
+                    <div class="tech-tags"><span class="tag">GKE</span><span class="tag">BigQuery</span><span class="tag">Vertex AI</span></div>
+                </div>
+            </div>
+
+            <h3 class="section-subtitle"><i class="fas fa-boxes"></i> Containers & Orchestration</h3>
+            <div class="tech-grid">
+                <div class="tech-card" onclick="openModal('docker')">
+                    <div class="tech-badge">Essential</div>
+                    <div class="tech-icon"><i class="fab fa-docker"></i></div>
+                    <h3>Docker</h3>
+                    <p>Package apps so they run the same everywhere</p>
+                    <div class="tech-tags"><span class="tag">Images</span><span class="tag">Containers</span><span class="tag">Compose</span></div>
+                </div>
+                <div class="tech-card" onclick="openModal('kubernetes')">
+                    <div class="tech-badge">Industry Standard</div>
+                    <div class="tech-icon"><i class="fas fa-dharmachakra"></i></div>
+                    <h3>Kubernetes</h3>
+                    <p>Manage many containers automatically</p>
+                    <div class="tech-tags"><span class="tag">Pods</span><span class="tag">Services</span><span class="tag">Deployments</span></div>
+                </div>
+                <div class="tech-card" onclick="openModal('helm')">
+                    <div class="tech-icon"><i class="fas fa-ship"></i></div>
+                    <h3>Helm</h3>
+                    <p>App store for Kubernetes - install apps easily</p>
+                    <div class="tech-tags"><span class="tag">Charts</span><span class="tag">Releases</span><span class="tag">Values</span></div>
+                </div>
+            </div>
+
+            <h3 class="section-subtitle"><i class="fas fa-code"></i> Infrastructure as Code</h3>
+            <div class="tech-grid">
+                <div class="tech-card" onclick="openModal('terraform')">
+                    <div class="tech-badge">Most Used IaC</div>
+                    <div class="tech-icon"><i class="fas fa-cube"></i></div>
+                    <h3>Terraform</h3>
+                    <p>Create cloud resources by writing simple code</p>
+                    <div class="tech-tags"><span class="tag">HCL</span><span class="tag">Providers</span><span class="tag">State</span></div>
+                </div>
+                <div class="tech-card" onclick="openModal('pulumi')">
+                    <div class="tech-badge">Modern IaC</div>
+                    <div class="tech-icon"><i class="fas fa-rocket"></i></div>
+                    <h3>Pulumi</h3>
+                    <p>Like Terraform but uses Python, JavaScript, etc.</p>
+                    <div class="tech-tags"><span class="tag">Python</span><span class="tag">TypeScript</span><span class="tag">Go</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cloud Comparison Section -->
+        <section id="comparison" class="comparison-section">
+            <h2><i class="fas fa-balance-scale"></i> Cloud Services Comparison</h2>
+            <p class="section-desc">Same features, different names - here's how they match up</p>
+            
+            <div class="comparison-table-container">
+                <div class="comparison-row header">
+                    <div class="comparison-cell category">Category</div>
+                    <div class="comparison-cell aws"><i class="fab fa-aws"></i> AWS</div>
+                    <div class="comparison-cell azure"><i class="fab fa-microsoft"></i> Azure</div>
+                    <div class="comparison-cell gcp"><i class="fab fa-google"></i> GCP</div>
+                </div>
+                <div class="comparison-row"><div class="comparison-cell category">Virtual Machines</div><div class="comparison-cell">EC2</div><div class="comparison-cell">Virtual Machines</div><div class="comparison-cell">Compute Engine</div></div>
+                <div class="comparison-row"><div class="comparison-cell category">Serverless</div><div class="comparison-cell">Lambda</div><div class="comparison-cell">Azure Functions</div><div class="comparison-cell">Cloud Functions</div></div>
+                <div class="comparison-row"><div class="comparison-cell category">Managed K8s</div><div class="comparison-cell">EKS</div><div class="comparison-cell">AKS</div><div class="comparison-cell">GKE</div></div>
+                <div class="comparison-row"><div class="comparison-cell category">Object Storage</div><div class="comparison-cell">S3</div><div class="comparison-cell">Blob Storage</div><div class="comparison-cell">Cloud Storage</div></div>
+                <div class="comparison-row"><div class="comparison-cell category">SQL Database</div><div class="comparison-cell">RDS</div><div class="comparison-cell">Azure SQL</div><div class="comparison-cell">Cloud SQL</div></div>
+                <div class="comparison-row"><div class="comparison-cell category">NoSQL</div><div class="comparison-cell">DynamoDB</div><div class="comparison-cell">Cosmos DB</div><div class="comparison-cell">Firestore</div></div>
+                <div class="comparison-row"><div class="comparison-cell category">CDN</div><div class="comparison-cell">CloudFront</div><div class="comparison-cell">Azure CDN</div><div class="comparison-cell">Cloud CDN</div></div>
+                <div class="comparison-row"><div class="comparison-cell category">Container Registry</div><div class="comparison-cell">ECR</div><div class="comparison-cell">ACR</div><div class="comparison-cell">Artifact Registry</div></div>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources" class="resources-section">
+            <h2><i class="fas fa-book"></i> Learning Resources</h2>
+            <p class="section-desc">Free and paid resources to help you learn</p>
+            
+            <div class="resources-tabs">
+                <button class="tab-btn active" onclick="showResourceTab('docs')"><i class="fas fa-file-alt"></i> Docs</button>
+                <button class="tab-btn" onclick="showResourceTab('courses')"><i class="fas fa-graduation-cap"></i> Courses</button>
+                <button class="tab-btn" onclick="showResourceTab('certs')"><i class="fas fa-certificate"></i> Certs</button>
+                <button class="tab-btn" onclick="showResourceTab('tools')"><i class="fas fa-tools"></i> Tools</button>
+            </div>
+
+            <div id="docs" class="resource-content active">
+                <div class="resource-grid">
+                    <a href="https://docs.aws.amazon.com/" target="_blank" class="resource-card"><i class="fab fa-aws"></i><h4>AWS Documentation</h4><p>Official AWS docs and tutorials</p></a>
+                    <a href="https://docs.microsoft.com/azure/" target="_blank" class="resource-card"><i class="fab fa-microsoft"></i><h4>Azure Documentation</h4><p>Microsoft Azure learning resources</p></a>
+                    <a href="https://cloud.google.com/docs" target="_blank" class="resource-card"><i class="fab fa-google"></i><h4>GCP Documentation</h4><p>Google Cloud official docs</p></a>
+                    <a href="https://kubernetes.io/docs/" target="_blank" class="resource-card"><i class="fas fa-dharmachakra"></i><h4>Kubernetes Docs</h4><p>Official K8s documentation</p></a>
+                    <a href="https://docs.docker.com/" target="_blank" class="resource-card"><i class="fab fa-docker"></i><h4>Docker Documentation</h4><p>Docker guides and references</p></a>
+                    <a href="https://www.terraform.io/docs" target="_blank" class="resource-card"><i class="fas fa-cube"></i><h4>Terraform Docs</h4><p>HashiCorp Terraform documentation</p></a>
+                </div>
+            </div>
+
+            <div id="courses" class="resource-content">
+                <div class="resource-grid">
+                    <a href="https://learn.microsoft.com/training/" target="_blank" class="resource-card"><i class="fab fa-microsoft"></i><h4>Microsoft Learn</h4><p>Free Azure learning paths</p><span class="resource-tag free">Free</span></a>
+                    <a href="https://www.cloudskillsboost.google/" target="_blank" class="resource-card"><i class="fab fa-google"></i><h4>Google Cloud Skills Boost</h4><p>Hands-on GCP labs</p><span class="resource-tag free">Free Labs</span></a>
+                    <a href="https://explore.skillbuilder.aws/" target="_blank" class="resource-card"><i class="fab fa-aws"></i><h4>AWS Skill Builder</h4><p>Free AWS training courses</p><span class="resource-tag free">Free</span></a>
+                    <a href="https://kodekloud.com/" target="_blank" class="resource-card"><i class="fas fa-terminal"></i><h4>KodeKloud</h4><p>DevOps hands-on learning</p><span class="resource-tag">Paid</span></a>
+                    <a href="https://acloudguru.com/" target="_blank" class="resource-card"><i class="fas fa-cloud"></i><h4>A Cloud Guru</h4><p>Multi-cloud training platform</p><span class="resource-tag">Paid</span></a>
+                    <a href="https://www.udemy.com/" target="_blank" class="resource-card"><i class="fas fa-graduation-cap"></i><h4>Udemy</h4><p>Affordable DevOps courses</p><span class="resource-tag">Paid</span></a>
+                </div>
+            </div>
+
+            <div id="certs" class="resource-content">
+                <div class="cert-paths">
+                    <div class="cert-path">
+                        <h4><i class="fab fa-aws"></i> AWS Certifications</h4>
+                        <div class="cert-levels">
+                            <div class="cert-level foundational"><span class="level-name">Foundational</span><div class="cert-item">Cloud Practitioner</div></div>
+                            <div class="cert-level associate"><span class="level-name">Associate</span><div class="cert-item">Solutions Architect</div><div class="cert-item">Developer</div><div class="cert-item">SysOps Admin</div></div>
+                            <div class="cert-level professional"><span class="level-name">Professional</span><div class="cert-item">Solutions Architect Pro</div><div class="cert-item">DevOps Engineer Pro</div></div>
+                        </div>
+                    </div>
+                    <div class="cert-path">
+                        <h4><i class="fab fa-microsoft"></i> Azure Certifications</h4>
+                        <div class="cert-levels">
+                            <div class="cert-level foundational"><span class="level-name">Fundamentals</span><div class="cert-item">AZ-900</div></div>
+                            <div class="cert-level associate"><span class="level-name">Associate</span><div class="cert-item">AZ-104 (Admin)</div><div class="cert-item">AZ-204 (Dev)</div></div>
+                            <div class="cert-level professional"><span class="level-name">Expert</span><div class="cert-item">AZ-305 (Architect)</div><div class="cert-item">AZ-400 (DevOps)</div></div>
+                        </div>
+                    </div>
+                    <div class="cert-path">
+                        <h4><i class="fas fa-dharmachakra"></i> Kubernetes Certifications</h4>
+                        <div class="cert-levels">
+                            <div class="cert-level foundational"><span class="level-name">Entry</span><div class="cert-item">KCNA</div></div>
+                            <div class="cert-level associate"><span class="level-name">Practitioner</span><div class="cert-item">CKAD</div><div class="cert-item">CKA</div></div>
+                            <div class="cert-level professional"><span class="level-name">Expert</span><div class="cert-item">CKS</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tools" class="resource-content">
+                <div class="resource-grid">
+                    <a href="https://code.visualstudio.com/" target="_blank" class="resource-card"><i class="fas fa-code"></i><h4>VS Code</h4><p>Best IDE with cloud extensions</p><span class="resource-tag free">Free</span></a>
+                    <a href="https://www.docker.com/products/docker-desktop/" target="_blank" class="resource-card"><i class="fab fa-docker"></i><h4>Docker Desktop</h4><p>Local container development</p><span class="resource-tag free">Free</span></a>
+                    <a href="https://minikube.sigs.k8s.io/" target="_blank" class="resource-card"><i class="fas fa-dharmachakra"></i><h4>Minikube</h4><p>Local Kubernetes cluster</p><span class="resource-tag free">Free</span></a>
+                    <a href="https://lens.dev/" target="_blank" class="resource-card"><i class="fas fa-eye"></i><h4>Lens</h4><p>Kubernetes IDE</p><span class="resource-tag free">Free</span></a>
+                    <a href="https://k9scli.io/" target="_blank" class="resource-card"><i class="fas fa-terminal"></i><h4>K9s</h4><p>Terminal UI for Kubernetes</p><span class="resource-tag free">Free</span></a>
+                    <a href="https://www.postman.com/" target="_blank" class="resource-card"><i class="fas fa-paper-plane"></i><h4>Postman</h4><p>API testing & development</p><span class="resource-tag free">Free</span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hands-on Labs Section -->
+        <section id="labs" class="labs-section">
+            <h2><i class="fas fa-flask"></i> Hands-on Labs</h2>
+            <p class="section-desc">Learn by doing - try these practice projects</p>
+            
+            <h3 class="section-subtitle"><i class="fas fa-globe"></i> Free Lab Platforms</h3>
+            <div class="platforms-grid">
+                <a href="https://killercoda.com/" target="_blank" class="platform-card">
+                    <div class="platform-icon"><i class="fas fa-terminal"></i></div>
+                    <h4>Killercoda</h4>
+                    <p>Free interactive labs for Docker, Kubernetes, Linux & more</p>
+                    <span class="platform-tag free">100% Free</span>
+                </a>
+                <a href="https://labs.play-with-docker.com/" target="_blank" class="platform-card">
+                    <div class="platform-icon"><i class="fab fa-docker"></i></div>
+                    <h4>Play with Docker</h4>
+                    <p>Free Docker playground - 4 hour sessions, no signup needed</p>
+                    <span class="platform-tag free">100% Free</span>
+                </a>
+                <a href="https://labs.play-with-k8s.com/" target="_blank" class="platform-card">
+                    <div class="platform-icon"><i class="fas fa-dharmachakra"></i></div>
+                    <h4>Play with Kubernetes</h4>
+                    <p>Free K8s cluster in browser - practice kubectl commands</p>
+                    <span class="platform-tag free">100% Free</span>
+                </a>
+                <a href="https://www.cloudskillsboost.google/" target="_blank" class="platform-card">
+                    <div class="platform-icon"><i class="fab fa-google"></i></div>
+                    <h4>Google Cloud Skills Boost</h4>
+                    <p>Hands-on GCP labs with real cloud environment</p>
+                    <span class="platform-tag free">Free Labs Available</span>
+                </a>
+                <a href="https://learn.microsoft.com/training/" target="_blank" class="platform-card">
+                    <div class="platform-icon"><i class="fab fa-microsoft"></i></div>
+                    <h4>Microsoft Learn</h4>
+                    <p>Free Azure sandboxes - practice without a credit card</p>
+                    <span class="platform-tag free">100% Free</span>
+                </a>
+                <a href="https://kodekloud.com/" target="_blank" class="platform-card">
+                    <div class="platform-icon"><i class="fas fa-code"></i></div>
+                    <h4>KodeKloud</h4>
+                    <p>DevOps labs with guided exercises - some free content</p>
+                    <span class="platform-tag">Free + Paid</span>
+                </a>
+                <a href="https://developer.hashicorp.com/terraform/tutorials" target="_blank" class="platform-card">
+                    <div class="platform-icon"><i class="fas fa-cube"></i></div>
+                    <h4>HashiCorp Tutorials</h4>
+                    <p>Official Terraform tutorials with hands-on exercises</p>
+                    <span class="platform-tag free">100% Free</span>
+                </a>
+                <a href="https://aws.amazon.com/free/" target="_blank" class="platform-card">
+                    <div class="platform-icon"><i class="fab fa-aws"></i></div>
+                    <h4>AWS Free Tier</h4>
+                    <p>12 months free - EC2, S3, RDS & 100+ services</p>
+                    <span class="platform-tag free">12 Months Free</span>
+                </a>
+            </div>
+
+            <h3 class="section-subtitle"><i class="fas fa-tasks"></i> Practice Projects</h3>
+            <div class="labs-grid">
+                <a href="https://killercoda.com/playgrounds/scenario/docker" target="_blank" class="lab-card beginner"><div class="lab-difficulty">Beginner</div><h4><i class="fab fa-docker"></i> Build Your First Container</h4><p>Create a Dockerfile, build an image, and run a container.</p><div class="lab-skills"><span>Docker</span><span>Nginx</span></div><div class="lab-meta"><span class="lab-time"><i class="fas fa-clock"></i> 30 mins</span><span class="lab-link"><i class="fas fa-external-link-alt"></i> Killercoda</span></div></a>
+                <a href="https://aws.amazon.com/getting-started/hands-on/host-static-website/" target="_blank" class="lab-card beginner"><div class="lab-difficulty">Beginner</div><h4><i class="fab fa-aws"></i> Deploy Static Site to S3</h4><p>Host a website using AWS S3 - step by step guide.</p><div class="lab-skills"><span>AWS S3</span><span>CloudFront</span></div><div class="lab-meta"><span class="lab-time"><i class="fas fa-clock"></i> 45 mins</span><span class="lab-link"><i class="fas fa-external-link-alt"></i> AWS Tutorial</span></div></a>
+                <a href="https://killercoda.com/playgrounds/scenario/kubernetes" target="_blank" class="lab-card intermediate"><div class="lab-difficulty">Intermediate</div><h4><i class="fas fa-dharmachakra"></i> Deploy App to Kubernetes</h4><p>Deploy an app with Deployments and Services.</p><div class="lab-skills"><span>Kubernetes</span><span>kubectl</span></div><div class="lab-meta"><span class="lab-time"><i class="fas fa-clock"></i> 1 hour</span><span class="lab-link"><i class="fas fa-external-link-alt"></i> Killercoda</span></div></a>
+                <a href="https://developer.hashicorp.com/terraform/tutorials/aws-get-started" target="_blank" class="lab-card intermediate"><div class="lab-difficulty">Intermediate</div><h4><i class="fas fa-cube"></i> Infrastructure with Terraform</h4><p>Create AWS resources using Terraform code.</p><div class="lab-skills"><span>Terraform</span><span>AWS</span></div><div class="lab-meta"><span class="lab-time"><i class="fas fa-clock"></i> 1.5 hours</span><span class="lab-link"><i class="fas fa-external-link-alt"></i> HashiCorp</span></div></a>
+                <a href="https://docs.github.com/en/actions/quickstart" target="_blank" class="lab-card advanced"><div class="lab-difficulty">Advanced</div><h4><i class="fas fa-code-branch"></i> CI/CD Pipeline</h4><p>Build an automated pipeline with GitHub Actions.</p><div class="lab-skills"><span>GitHub Actions</span><span>Docker</span></div><div class="lab-meta"><span class="lab-time"><i class="fas fa-clock"></i> 2 hours</span><span class="lab-link"><i class="fas fa-external-link-alt"></i> GitHub Docs</span></div></a>
+                <a href="https://learn.microsoft.com/en-us/training/paths/create-microservices-with-dotnet/" target="_blank" class="lab-card advanced"><div class="lab-difficulty">Advanced</div><h4><i class="fas fa-project-diagram"></i> Microservices Architecture</h4><p>Build and deploy microservices step by step.</p><div class="lab-skills"><span>Microservices</span><span>APIs</span></div><div class="lab-meta"><span class="lab-time"><i class="fas fa-clock"></i> 3 hours</span><span class="lab-link"><i class="fas fa-external-link-alt"></i> Microsoft Learn</span></div></a>
+            </div>
+        </section>
+
+        <!-- Cheat Sheets Section -->
+        <section id="cheatsheets" class="cheatsheets-section">
+            <h2><i class="fas fa-sticky-note"></i> Cheat Sheets</h2>
+            <p class="section-desc">Common commands you'll use often</p>
+            
+            <div class="cheatsheet-tabs">
+                <button class="cheat-tab active" onclick="showCheatSheet('docker-cheat')">Docker</button>
+                <button class="cheat-tab" onclick="showCheatSheet('k8s-cheat')">Kubernetes</button>
+                <button class="cheat-tab" onclick="showCheatSheet('terraform-cheat')">Terraform</button>
+                <button class="cheat-tab" onclick="showCheatSheet('git-cheat')">Git</button>
+            </div>
+
+            <div id="docker-cheat" class="cheatsheet-content active">
+                <div class="cheat-grid">
+                    <div class="cheat-category"><h4>Images</h4><code>docker build -t name .</code><code>docker images</code><code>docker pull image:tag</code><code>docker push image:tag</code><code>docker rmi image</code></div>
+                    <div class="cheat-category"><h4>Containers</h4><code>docker run -d -p 80:80 img</code><code>docker ps -a</code><code>docker stop container</code><code>docker rm container</code><code>docker logs container</code></div>
+                    <div class="cheat-category"><h4>Debugging</h4><code>docker exec -it cont sh</code><code>docker inspect container</code><code>docker stats</code><code>docker top container</code></div>
+                    <div class="cheat-category"><h4>Compose</h4><code>docker-compose up -d</code><code>docker-compose down</code><code>docker-compose logs</code><code>docker-compose ps</code></div>
+                </div>
+            </div>
+
+            <div id="k8s-cheat" class="cheatsheet-content">
+                <div class="cheat-grid">
+                    <div class="cheat-category"><h4>Basic Commands</h4><code>kubectl get pods</code><code>kubectl get svc</code><code>kubectl get nodes</code><code>kubectl describe pod name</code></div>
+                    <div class="cheat-category"><h4>Create & Apply</h4><code>kubectl apply -f file.yaml</code><code>kubectl create deploy name --image=img</code><code>kubectl expose deploy name --port=80</code><code>kubectl scale deploy name --replicas=3</code></div>
+                    <div class="cheat-category"><h4>Debugging</h4><code>kubectl logs pod-name</code><code>kubectl exec -it pod -- sh</code><code>kubectl port-forward pod 8080:80</code><code>kubectl get events</code></div>
+                    <div class="cheat-category"><h4>Delete</h4><code>kubectl delete pod name</code><code>kubectl delete -f file.yaml</code><code>kubectl delete deploy name</code></div>
+                </div>
+            </div>
+
+            <div id="terraform-cheat" class="cheatsheet-content">
+                <div class="cheat-grid">
+                    <div class="cheat-category"><h4>Workflow</h4><code>terraform init</code><code>terraform plan</code><code>terraform apply</code><code>terraform destroy</code></div>
+                    <div class="cheat-category"><h4>State</h4><code>terraform state list</code><code>terraform state show resource</code><code>terraform state mv old new</code><code>terraform state rm resource</code></div>
+                    <div class="cheat-category"><h4>Workspace</h4><code>terraform workspace list</code><code>terraform workspace new dev</code><code>terraform workspace select dev</code></div>
+                    <div class="cheat-category"><h4>Utilities</h4><code>terraform fmt</code><code>terraform validate</code><code>terraform output</code><code>terraform graph</code></div>
+                </div>
+            </div>
+
+            <div id="git-cheat" class="cheatsheet-content">
+                <div class="cheat-grid">
+                    <div class="cheat-category"><h4>Basic</h4><code>git init</code><code>git clone url</code><code>git status</code><code>git add .</code><code>git commit -m "msg"</code></div>
+                    <div class="cheat-category"><h4>Branches</h4><code>git branch</code><code>git checkout -b branch</code><code>git merge branch</code><code>git branch -d branch</code></div>
+                    <div class="cheat-category"><h4>Remote</h4><code>git push origin main</code><code>git pull origin main</code><code>git fetch</code><code>git remote -v</code></div>
+                    <div class="cheat-category"><h4>Undo</h4><code>git reset --soft HEAD~1</code><code>git reset --hard HEAD~1</code><code>git revert commit</code><code>git stash</code></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <h2>About This Learning Hub</h2>
+            <p>A simple learning resource to help you understand modern technology concepts.</p>
+            <p>Built with ❤️ for learners everywhere.</p>
+            <div class="social-links">
+                <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 TechPath. Learn technology the simple way.</p>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
